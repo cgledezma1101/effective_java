@@ -5,6 +5,7 @@ public class ImmutableFields {
 	public static class Thing {
 	}
 
+	// An array should never be exposed as a constant, as it is always mutable
 	private static final Thing[] PRIVATE_VALUES = { new Thing(), new Thing(), new Thing() };
 
 	// A correct way to expose a static array field is to have a public method that returns an immutable list out of it.
