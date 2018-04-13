@@ -5,7 +5,7 @@ public class StringFormat {
 		int lineNumber = 4211;
 		PhoneNumber phone = new PhoneNumber(countryCode, areaCode, lineNumber);
 
-		System.out.printf("Parameters provided: \n\t%6d - Country\n\t%6d - Area\n\t%6d - Number\n", countryCode, areaCode, lineNumber);
+		System.out.printf("Parameters provided: \n\t%6d - Country\n\t%6d - Area\n\t%6d - Number\n", phone.countryCode, phone.areaCode, phone.number);
 		System.out.println("My phone number is: " + phone);
 	}
 
