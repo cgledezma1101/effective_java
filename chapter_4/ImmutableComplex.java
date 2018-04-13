@@ -1,5 +1,10 @@
 // Final modifier guarantees the class can't be extended
 public final class ImmutableComplex {
+	// Some common constants for complex numbers. Note that since the class is immutable, these can be shared freely
+	public static final ImmutableComplex ZERO = new ImmutableComplex(0, 0);
+	public static final ImmutableComplex ONE = new ImmutableComplex(1, 0);
+	public static final ImmutableComplex I = new ImmutableComplex(0, 1);
+
 	// Private final fields guartantee immutability and hide the implementation details
 	private final double re;
 	private final double im;
