@@ -1,8 +1,11 @@
 public class StringFormat {
 	public static void main(String[] args) {
-		PhoneNumber phone = new PhoneNumber(61, 424, 338978);
+		int countryCode = 5;
+		int areaCode = 24;
+		int lineNumber = 4211;
+		PhoneNumber phone = new PhoneNumber(countryCode, areaCode, lineNumber);
 
-		System.out.printf("Parameters provided: \n\t%6d - Country\n\t%6d - Area\n\t%6d - Number\n", 61, 424, 338978);
+		System.out.printf("Parameters provided: \n\t%6d - Country\n\t%6d - Area\n\t%6d - Number\n", countryCode, areaCode, lineNumber);
 		System.out.println("My phone number is: " + phone);
 	}
 
@@ -18,7 +21,7 @@ public class StringFormat {
 		}
 
 		@Override public String toString() {
-			return String.format("+%s-%s-%s", countryCode, areaCode, number);
+			return String.format("+%02d-%03d-%06d", countryCode, areaCode, number);
 		}
 	}
 }
