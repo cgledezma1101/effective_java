@@ -12,6 +12,9 @@ public class ImmutableFields {
 	// A correct way to expose a static array field is to have a public method that returns an immutable list out of it.
 	public static final List<Thing> VALUES = Collections.unmodifiableList(Arrays.asList((PRIVATE_VALUES)));
 
+	// There's also this nifty trick new to Java 9
+	public static final List<Thing> VALUES_WITH_LIST_OF = Collections.unmodifiableList(List.of(new Thing(), new Thing(), new Thing()));
+
 	// Alternatively, we can provide a method that returns a copy of the array.
 	public static final Thing[] values() {
 		return PRIVATE_VALUES.clone();
