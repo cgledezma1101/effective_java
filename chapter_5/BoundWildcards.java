@@ -28,6 +28,21 @@ public class BoundWildcards {
 		}
 	}
 
+	public static <E extends Comparable<? super E>> E max(List<? extends E> c) {
+		if (c.isEmpty()) {
+			throw new IllegalArgumentException("Empty collection");
+		}
+
+		E result = null;
+		for (E e : c) {
+			if (result == null || e.compareTo(result) > 0) {
+				result = Objects.requireNonNull(e);
+			}
+		}
+
+		return result;
+	}
+
 	public static void main(String[] args) {
 		Stack<Number> numberStack = new Stack<>();
 		Iterable<Integer> integers = Set.of(1, 2, 3, 4);
