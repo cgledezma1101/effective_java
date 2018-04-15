@@ -1,4 +1,5 @@
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class ConstantSpecificMethods {
 	public static enum Operation {
