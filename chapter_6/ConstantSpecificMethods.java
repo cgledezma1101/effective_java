@@ -1,3 +1,5 @@
+import java.util.Optional;
+
 public class ConstantSpecificMethods {
 	public static enum Operation {
 		PLUS("+") { public double apply(double x, double y){ return x + y; } },
@@ -11,8 +13,15 @@ public class ConstantSpecificMethods {
 
 		@Override public String toString(){ return symbol; }
 
+		private static final Map<String, Operation> stringToEnum = Stream.of(values()).collect(toMap(Object::toString, e -> e));
+		
+		public static Optional<Operation> fromString(String symbol) {
+			return Optional.ofNullable(stringToEnum.get(symbol));
+		}
+
 		public abstract double apply(double x, double y);
 	}
+
 
 	public static void main(String[] args) {
 		double x = Double.parseDouble(args[0]);
