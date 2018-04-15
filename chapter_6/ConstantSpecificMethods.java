@@ -14,7 +14,7 @@ public class ConstantSpecificMethods {
 		@Override public String toString(){ return symbol; }
 
 		private static final Map<String, Operation> stringToEnum = Stream.of(values()).collect(toMap(Object::toString, e -> e));
-		
+
 		public static Optional<Operation> fromString(String symbol) {
 			return Optional.ofNullable(stringToEnum.get(symbol));
 		}
